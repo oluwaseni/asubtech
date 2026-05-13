@@ -1,0 +1,39 @@
+<section class="gallery-section" id="gallery">
+  <div class="gallery-inner">
+    <div class="gallery-header reveal">
+      <div class="section-label">Our Work</div>
+      <h2>Project <span class="accent">Gallery</span></h2>
+      <p>A glimpse of completed installations and projects across Nigeria and beyond.</p>
+    </div>
+
+    <div class="gallery-filters reveal rd1">
+      <button
+        class="gf-btn"
+        [class.active]="activeFilter === f"
+        (click)="activeFilter = f"
+        *ngFor="let f of filters"
+      >{{ f }}</button>
+    </div>
+
+    <div class="gallery-grid">
+      <div
+        class="gallery-card reveal"
+        *ngFor="let item of filtered; let i = index"
+        [class.rd1]="i % 4 === 1"
+        [class.rd2]="i % 4 === 2"
+        [class.rd3]="i % 4 === 3"
+      >
+        <img [src]="item.src" [alt]="item.label" loading="lazy" />
+        <div class="gallery-overlay">
+          <span class="gallery-cat">{{ item.category }}</span>
+          <span class="gallery-label">{{ item.label }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-cta reveal">
+      <p>Like what you see? Let's work together on your next project.</p>
+      <button class="btn-yellow" (click)="scrollTo('contact')">Get a Free Quote →</button>
+    </div>
+  </div>
+</section>

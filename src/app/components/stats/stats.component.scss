@@ -1,0 +1,142 @@
+.stats-section {
+  padding: 5rem 0;
+  background: var(--light);
+}
+
+.stats-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.stats-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.stats-heading {
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    color: var(--navy);
+    line-height: 1.2;
+
+    .accent { color: var(--yellow); }
+  }
+
+  p {
+    color: var(--gray);
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 400px;
+    margin-top: 0.5rem;
+  }
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(245, 168, 0, 0.12);
+    border-color: rgba(245, 168, 0, 0.4);
+
+    &::after { transform: scaleX(1); }
+  }
+
+  &-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(245, 168, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 13px;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+}
+
+.stat-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stat-label-sm {
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.stat-val {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--navy);
+}
+
+.stat-badge {
+  background: var(--yellow);
+  color: var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 960px) {
+  .stats-cards { grid-template-columns: 1fr; }
+  .stats-top { flex-direction: column; }
+}

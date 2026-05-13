@@ -1,0 +1,40 @@
+<section class="packages" id="packages">
+  <div class="packages-inner">
+    <div class="pkg-img reveal">
+      <img
+        src="assets/images/gallery/office-electrical.jpg"
+        alt="Electrical installation work"
+      />
+      <div class="pkg-img-badge">✓ Quality Guaranteed</div>
+    </div>
+
+    <div class="pkg-right reveal rd1">
+      <div class="section-label">What We Offer</div>
+      <h2>
+        Installation Packages &amp; Services
+        <span class="accent">Designed to Perform</span>
+      </h2>
+      <p>
+        Whether it's a single home or a large commercial complex, we have
+        tailored service packages for every scale and budget.
+      </p>
+
+      <div class="pkg-tabs">
+        <button
+          class="pkg-tab"
+          [class.active]="activeKey === cat.key"
+          (click)="selectTab(cat.key)"
+          *ngFor="let cat of categories"
+        >
+          {{ cat.label }}
+        </button>
+      </div>
+
+      <div class="pkg-list">
+        <div class="pkg-item" *ngFor="let item of activeItems">{{ item }}</div>
+      </div>
+
+      <button class="btn-yellow" (click)="scrollTo('contact')">Book a Service →</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,118 @@
+.packages {
+  padding: 5rem 0;
+  background: #fff;
+}
+
+.packages-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.pkg-img {
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &-badge {
+    position: absolute;
+    bottom: 20px;
+    left: -12px;
+    background: var(--yellow);
+    color: var(--navy);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 0 5px 5px 0;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.pkg-right {
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+
+    .accent { color: var(--yellow); }
+  }
+
+  > p {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.pkg-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.pkg-tab {
+  background: var(--light);
+  border: 1.5px solid var(--border);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.2s;
+
+  &.active, &:hover {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+  }
+}
+
+.pkg-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 1.75rem;
+}
+
+.pkg-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: var(--navy);
+  font-weight: 500;
+
+  &::before {
+    content: '●';
+    color: var(--yellow);
+    font-size: 9px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .packages-inner { grid-template-columns: 1fr; }
+  .pkg-img { display: none; }
+  .pkg-list { grid-template-columns: 1fr 1fr; }
+}

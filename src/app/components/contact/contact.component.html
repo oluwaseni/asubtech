@@ -1,0 +1,91 @@
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="cta-left reveal">
+      <div class="cta-label">Free Consultation</div>
+      <h2>Click to Get<br>a <span class="accent">Free Quote</span></h2>
+      <p>
+        Our team is ready to assess your site, provide a detailed quote,
+        and get your project started quickly — anywhere in Nigeria and abroad.
+      </p>
+
+      <div class="cta-contacts">
+        <div class="cci" *ngFor="let item of contactItems">
+          <div class="cci-icon">{{ item.icon }}</div>
+          <div>
+            <div class="cci-label">{{ item.label }}</div>
+            <div class="cci-value">
+              <a [href]="item.href">{{ item.value }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- QUOTE FORM -->
+      <form class="quote-form" [formGroup]="quoteForm" (ngSubmit)="onSubmit()" *ngIf="!success" novalidate>
+        <div class="qf-row">
+          <div class="qf-group">
+            <input
+              class="qf-input"
+              type="text"
+              placeholder="Your Name"
+              formControlName="name"
+              [class.error]="submitted && f['name'].errors"
+            />
+            <span class="error-msg" *ngIf="submitted && f['name'].errors?.['required']">Name is required</span>
+          </div>
+          <div class="qf-group">
+            <input
+              class="qf-input"
+              type="tel"
+              placeholder="Phone Number"
+              formControlName="phone"
+              [class.error]="submitted && f['phone'].errors"
+            />
+            <span class="error-msg" *ngIf="submitted && f['phone'].errors?.['required']">Phone is required</span>
+            <span class="error-msg" *ngIf="submitted && f['phone'].errors?.['pattern']">Enter a valid phone number</span>
+          </div>
+        </div>
+
+        <div class="qf-group">
+          <select
+            class="qf-input"
+            formControlName="service"
+            [class.error]="submitted && f['service'].errors"
+          >
+            <option value="">— Select a Service —</option>
+            <option *ngFor="let svc of services" [value]="svc">{{ svc }}</option>
+          </select>
+          <span class="error-msg" *ngIf="submitted && f['service'].errors?.['required']">Please select a service</span>
+        </div>
+
+        <div class="qf-group">
+          <textarea
+            class="qf-input"
+            placeholder="Briefly describe your project and location..."
+            formControlName="message"
+          ></textarea>
+        </div>
+
+        <button type="submit" class="btn-yellow full-width">⚡ Send Request</button>
+      </form>
+
+      <!-- SUCCESS STATE -->
+      <div class="success-box" *ngIf="success">
+        <div class="ico">✅</div>
+        <h3>Message Sent!</h3>
+        <p>
+          We'll contact you within 2 hours. For urgent jobs, WhatsApp us on
+          <strong class="highlight">07055555754</strong>.
+        </p>
+        <button class="btn-outline" (click)="resetForm()">Send Another Request</button>
+      </div>
+    </div>
+
+    <div class="cta-right">
+      <img
+        src="assets/images/gallery/smart-home-wiring.jpg"
+        alt="Professional electrical work"
+      />
+    </div>
+  </div>
+</section>

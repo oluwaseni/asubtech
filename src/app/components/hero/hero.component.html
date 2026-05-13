@@ -1,0 +1,32 @@
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-tag">⚡ Licensed &amp; Certified Contractors</div>
+      <h1 class="hero-title">
+        Durable &amp;<br>
+        <span class="accent">High-Quality</span><br>
+        Electrical &amp; Smart<br>
+        Installations
+      </h1>
+      <p class="hero-sub">
+        From smart home automation to full industrial electrical works —
+        ASU B TECH delivers precision, safety, and excellence anywhere
+        in Nigeria and beyond.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-yellow" (click)="scrollTo('contact')">Get a Free Quote →</button>
+        <button class="btn-ghost" (click)="scrollTo('services')">View Services</button>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hero-card-label">Our Services</div>
+        <div class="hsl-grid">
+          <div class="hsl-item" *ngFor="let service of services">{{ service }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

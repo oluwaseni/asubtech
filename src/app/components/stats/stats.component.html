@@ -1,0 +1,32 @@
+<section class="stats-section" id="about">
+  <div class="stats-inner">
+    <div class="stats-top reveal">
+      <div class="stats-heading">
+        <h2>Increase Your Home's Value<br>with <span class="accent">Expert Upgrades</span></h2>
+        <p>Our track record speaks — hundreds of projects delivered safely, on time, and within budget across Nigeria.</p>
+      </div>
+      <button class="btn-yellow" (click)="scrollTo('contact')">Contact Us Now →</button>
+    </div>
+
+    <div class="stats-cards">
+      <div
+        class="stat-card reveal"
+        [class.rd1]="i === 0"
+        [class.rd2]="i === 1"
+        [class.rd3]="i === 2"
+        *ngFor="let card of cards; let i = index"
+      >
+        <div class="stat-card-icon">{{ card.icon }}</div>
+        <h3>{{ card.title }}</h3>
+        <p>{{ card.description }}</p>
+        <div class="stat-bottom">
+          <div>
+            <div class="stat-label-sm">{{ card.label }}</div>
+            <div class="stat-val">{{ card.value }}</div>
+          </div>
+          <div class="stat-badge">{{ card.badge }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
