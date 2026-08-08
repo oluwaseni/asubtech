@@ -27,7 +27,9 @@
   }
 
   &-tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     background: var(--yellow);
     color: var(--navy);
     font-size: 10px;

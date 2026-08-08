@@ -10,7 +10,7 @@
 
       <div class="cta-contacts">
         <div class="cci" *ngFor="let item of contactItems">
-          <div class="cci-icon">{{ item.icon }}</div>
+          <div class="cci-icon"><app-icon [name]="item.icon"></app-icon></div>
           <div>
             <div class="cci-label">{{ item.label }}</div>
             <div class="cci-value">
@@ -66,12 +66,12 @@
           ></textarea>
         </div>
 
-        <button type="submit" class="btn-yellow full-width">⚡ Send Request</button>
+        <button type="submit" class="btn-yellow full-width"><app-icon name="bolt"></app-icon> Send Request</button>
       </form>
 
       <!-- SUCCESS STATE -->
       <div class="success-box" *ngIf="success">
-        <div class="ico">✅</div>
+        <div class="ico"><app-icon name="check-circle"></app-icon></div>
         <h3>Message Sent!</h3>
         <p>
           We'll contact you within 2 hours. For urgent jobs, WhatsApp us on

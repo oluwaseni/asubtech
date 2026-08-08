@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, IconComponent],
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
@@ -28,9 +29,9 @@ export class ContactComponent {
   ];
 
   contactItems = [
-    { icon: '📱', label: 'WhatsApp', value: '07055555754', href: 'https://wa.me/2347055555754' },
-    { icon: '📞', label: 'Telephone', value: '07088580855', href: 'tel:07088580855' },
-    { icon: '✉️', label: 'Email', value: 'asufolly@gmail.com', href: 'mailto:asufolly@gmail.com' }
+    { icon: 'whatsapp', label: 'WhatsApp', value: '07055555754', href: 'https://wa.me/2347055555754' },
+    { icon: 'phone', label: 'Telephone', value: '07088580855', href: 'tel:07088580855' },
+    { icon: 'mail', label: 'Email', value: 'asufolly@gmail.com', href: 'mailto:asufolly@gmail.com' }
   ];
 
   constructor(private fb: FormBuilder) {

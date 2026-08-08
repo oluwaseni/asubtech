@@ -1,0 +1,31 @@
+<section class="testimonials-section">
+  <div class="testimonials-inner">
+    <div class="testimonials-header reveal">
+      <div class="section-label">Client Reviews</div>
+      <h2>What Our <span class="accent">Clients Say</span></h2>
+      <p>Trusted by homeowners and businesses across Nigeria for dependable, high-quality installations.</p>
+    </div>
+
+    <div class="testimonials-grid">
+      <div
+        class="testimonial-card reveal"
+        *ngFor="let t of testimonials; let i = index"
+        [class.rd1]="i === 1"
+        [class.rd2]="i === 2"
+      >
+        <div class="tc-stars">
+          <app-icon
+            *ngFor="let s of stars"
+            name="star"
+            [class.filled]="s <= t.rating"
+          ></app-icon>
+        </div>
+        <p class="tc-quote">“{{ t.quote }}”</p>
+        <div class="tc-author">
+          <div class="tc-name">{{ t.name }}</div>
+          <div class="tc-role">{{ t.role }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

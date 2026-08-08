@@ -2,9 +2,9 @@
 <div class="topbar">
   <div class="topbar-inner">
     <div class="topbar-contact">
-      <a href="tel:07055555754">📱 07055555754 (WhatsApp)</a>
-      <a href="tel:07088580855">📞 07088580855</a>
-      <a href="mailto:asufolly@gmail.com">✉️ asufolly&#64;gmail.com</a>
+      <a href="tel:07055555754"><app-icon name="whatsapp"></app-icon> 07055555754 (WhatsApp)</a>
+      <a href="tel:07088580855"><app-icon name="phone"></app-icon> 07088580855</a>
+      <a href="mailto:asufolly@gmail.com"><app-icon name="mail"></app-icon> asufolly&#64;gmail.com</a>
     </div>
     <div class="topbar-right">Available: <span>Nigeria &amp; Abroad</span></div>
   </div>
@@ -13,7 +13,7 @@
 <!-- MAIN NAV -->
 <nav>
   <div class="nav-inner">
-    <a class="nav-logo" (click)="scrollTo('home')" role="button">
+    <a class="nav-logo" routerLink="/">
       <div class="logo-box">AB</div>
       <div class="logo-text">
         ASU B<span class="yellow">TECH</span>
@@ -22,12 +22,12 @@
     </a>
 
     <ul class="nav-links">
-      <li><a (click)="scrollTo('home')">Home</a></li>
-      <li><a (click)="scrollTo('services')">Services</a></li>
-      <li><a (click)="scrollTo('packages')">Packages</a></li>
-      <li><a (click)="scrollTo('about')">About</a></li>
-      <li><a (click)="scrollTo('gallery')">Gallery</a></li>
-      <li><a (click)="scrollTo('contact')" class="nav-btn">Get a Quote</a></li>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+      <li><a routerLink="/services" routerLinkActive="active">Services</a></li>
+      <li><a routerLink="/packages" routerLinkActive="active">Packages</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      <li><a routerLink="/gallery" routerLinkActive="active">Gallery</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" class="nav-btn">Get a Quote</a></li>
     </ul>
 
     <button class="hamburger" (click)="toggleMenu()" aria-label="Toggle menu">
@@ -40,9 +40,10 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" [class.open]="mobileMenuOpen">
-  <a (click)="scrollTo('home')">Home</a>
-  <a (click)="scrollTo('services')">Services</a>
-  <a (click)="scrollTo('packages')">Packages</a>
-  <a (click)="scrollTo('gallery')">Gallery</a>
-  <a (click)="scrollTo('contact')">Get a Quote</a>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="closeMenu()">Home</a>
+  <a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Services</a>
+  <a routerLink="/packages" routerLinkActive="active" (click)="closeMenu()">Packages</a>
+  <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+  <a routerLink="/gallery" routerLinkActive="active" (click)="closeMenu()">Gallery</a>
+  <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Get a Quote</a>
 </div>

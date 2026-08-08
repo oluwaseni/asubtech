@@ -129,6 +129,10 @@
   }
 }
 
+.gallery-more {
+  text-align: center;
+}
+
 @media (max-width: 900px) {
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
 }

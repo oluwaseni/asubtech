@@ -5,7 +5,7 @@
         <h2>Increase Your Home's Value<br>with <span class="accent">Expert Upgrades</span></h2>
         <p>Our track record speaks — hundreds of projects delivered safely, on time, and within budget across Nigeria.</p>
       </div>
-      <button class="btn-yellow" (click)="scrollTo('contact')">Contact Us Now →</button>
+      <a routerLink="/contact" class="btn-yellow">Contact Us Now →</a>
     </div>
 
     <div class="stats-cards">
@@ -16,7 +16,7 @@
         [class.rd3]="i === 2"
         *ngFor="let card of cards; let i = index"
       >
-        <div class="stat-card-icon">{{ card.icon }}</div>
+        <div class="stat-card-icon"><app-icon [name]="card.icon"></app-icon></div>
         <h3>{{ card.title }}</h3>
         <p>{{ card.description }}</p>
         <div class="stat-bottom">

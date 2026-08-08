@@ -2,7 +2,7 @@
   <div class="hero-bg"></div>
   <div class="hero-content">
     <div class="hero-left">
-      <div class="hero-tag">⚡ Licensed &amp; Certified Contractors</div>
+      <div class="hero-tag"><app-icon name="bolt"></app-icon> Licensed &amp; Certified Contractors</div>
       <h1 class="hero-title">
         Durable &amp;<br>
         <span class="accent">High-Quality</span><br>
@@ -15,8 +15,8 @@
         in Nigeria and beyond.
       </p>
       <div class="hero-actions">
-        <button class="btn-yellow" (click)="scrollTo('contact')">Get a Free Quote →</button>
-        <button class="btn-ghost" (click)="scrollTo('services')">View Services</button>
+        <a routerLink="/contact" class="btn-yellow">Get a Free Quote →</a>
+        <a routerLink="/services" class="btn-ghost">View Services</a>
       </div>
     </div>
 

@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroComponent } from '../../components/hero/hero.component';
-import { FeaturesComponent } from '../../components/features/features.component';
-import { PackagesComponent } from '../../components/packages/packages.component';
-import { StatsComponent } from '../../components/stats/stats.component';
-import { ContactComponent } from '../../components/contact/contact.component';
+import { ServiceBreakdownComponent } from '../../components/service-breakdown/service-breakdown.component';
 import { GalleryComponent } from '../../components/gallery/gallery.component';
+import { TestimonialsComponent } from '../../components/testimonials/testimonials.component';
+import { BookNowComponent } from '../../components/book-now/book-now.component';
 import { ScrollRevealService } from '../../services/scroll-reveal.service';
 
 @Component({
@@ -14,19 +13,17 @@ import { ScrollRevealService } from '../../services/scroll-reveal.service';
   imports: [
     CommonModule,
     HeroComponent,
-    FeaturesComponent,
-    PackagesComponent,
-    StatsComponent,
+    ServiceBreakdownComponent,
     GalleryComponent,
-    ContactComponent
+    TestimonialsComponent,
+    BookNowComponent
   ],
   template: `
     <app-hero></app-hero>
-    <app-features></app-features>
-    <app-packages></app-packages>
-    <app-stats></app-stats>
-    <app-gallery></app-gallery>
-    <app-contact></app-contact>
+    <app-service-breakdown [compact]="true" [limit]="6"></app-service-breakdown>
+    <app-gallery [compact]="true" [limit]="6"></app-gallery>
+    <app-testimonials></app-testimonials>
+    <app-book-now></app-book-now>
   `
 })
 export class HomeComponent implements OnInit {

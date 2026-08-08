@@ -23,7 +23,7 @@
       <h4>Quick Links</h4>
       <ul>
         <li *ngFor="let link of quickLinks">
-          <a (click)="scrollTo(link.id)">{{ link.label }}</a>
+          <a [routerLink]="link.path">{{ link.label }}</a>
         </li>
       </ul>
     </div>
@@ -39,28 +39,28 @@
       <h4>Contact Us</h4>
       <div class="footer-contact-items">
         <div class="fci">
-          <div class="fci-icon">📱</div>
+          <div class="fci-icon"><app-icon name="whatsapp"></app-icon></div>
           <div>
             <div class="fci-label">WhatsApp</div>
             <a href="https://wa.me/2347055555754">07055555754</a>
           </div>
         </div>
         <div class="fci">
-          <div class="fci-icon">📞</div>
+          <div class="fci-icon"><app-icon name="phone"></app-icon></div>
           <div>
             <div class="fci-label">Call</div>
             <a href="tel:07088580855">07088580855</a>
           </div>
         </div>
         <div class="fci">
-          <div class="fci-icon">✉️</div>
+          <div class="fci-icon"><app-icon name="mail"></app-icon></div>
           <div>
             <div class="fci-label">Email</div>
             <a href="mailto:asufolly@gmail.com">asufolly&#64;gmail.com</a>
           </div>
         </div>
         <div class="fci">
-          <div class="fci-icon">📍</div>
+          <div class="fci-icon"><app-icon name="pin"></app-icon></div>
           <div>
             <div class="fci-label">Coverage</div>
             <span>Nigeria &amp; Abroad</span>

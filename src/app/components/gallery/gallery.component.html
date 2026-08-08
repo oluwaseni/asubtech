@@ -1,4 +1,4 @@
-<section class="gallery-section" id="gallery">
+<section class="gallery-section" [attr.id]="compact ? null : 'gallery'">
   <div class="gallery-inner">
     <div class="gallery-header reveal">
       <div class="section-label">Our Work</div>
@@ -6,7 +6,7 @@
       <p>A glimpse of completed installations and projects across Nigeria and beyond.</p>
     </div>
 
-    <div class="gallery-filters reveal rd1">
+    <div class="gallery-filters reveal rd1" *ngIf="!compact">
       <button
         class="gf-btn"
         [class.active]="activeFilter === f"
@@ -31,9 +31,13 @@
       </div>
     </div>
 
-    <div class="gallery-cta reveal">
+    <div class="gallery-cta reveal" *ngIf="!compact">
       <p>Like what you see? Let's work together on your next project.</p>
-      <button class="btn-yellow" (click)="scrollTo('contact')">Get a Free Quote →</button>
+      <a routerLink="/contact" class="btn-yellow">Get a Free Quote →</a>
+    </div>
+
+    <div class="gallery-more reveal" *ngIf="compact">
+      <a routerLink="/gallery" class="btn-yellow">View Full Gallery →</a>
     </div>
   </div>
 </section>

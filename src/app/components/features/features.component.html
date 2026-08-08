@@ -1,4 +1,4 @@
-<section class="features-strip" id="services">
+<section class="features-strip" id="why-us">
   <div class="strip-inner">
     <h2 class="reveal">Why Choose ASU B TECH</h2>
     <p class="reveal rd1">Your trusted partner for professional electrical and mechanical engineering solutions.</p>
@@ -10,7 +10,7 @@
         [class.rd3]="i === 2"
         *ngFor="let feature of features; let i = index"
       >
-        <div class="feature-icon">{{ feature.icon }}</div>
+        <div class="feature-icon"><app-icon [name]="feature.icon"></app-icon></div>
         <h3>{{ feature.title }}</h3>
         <p>{{ feature.description }}</p>
       </div>

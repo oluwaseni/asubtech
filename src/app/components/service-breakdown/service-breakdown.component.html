@@ -1,0 +1,53 @@
+<section class="services-section" [class.compact]="compact">
+  <div class="services-inner">
+    <div class="services-header reveal">
+      <div class="section-label">What We Do</div>
+      <h2>Services Built for <span class="accent">Every Property</span></h2>
+      <p>From a single smart switch to full industrial control rooms — here's exactly what ASU B TECH delivers.</p>
+    </div>
+
+    <!-- Full breakdown: alternating image + detail rows -->
+    <ng-container *ngIf="!compact">
+      <div class="service-row reveal" *ngFor="let s of shown">
+        <div class="service-media">
+          <img [src]="s.image" [alt]="s.title" loading="lazy" />
+        </div>
+        <div class="service-body">
+          <div class="service-icon"><app-icon [name]="s.icon"></app-icon></div>
+          <div class="service-tag">{{ s.tag }}</div>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.summary }}</p>
+          <ul class="service-features">
+            <li *ngFor="let f of s.features"><app-icon name="check-circle"></app-icon> {{ f }}</li>
+          </ul>
+          <a routerLink="/contact" class="btn-yellow">Request This Service →</a>
+        </div>
+      </div>
+
+      <div class="services-cta reveal">
+        <p>Not sure which service you need? Tell us about your project and we'll recommend the right fit.</p>
+        <a routerLink="/contact" class="btn-yellow">Get a Free Quote →</a>
+      </div>
+    </ng-container>
+
+    <!-- Compact preview: icon cards for the homepage -->
+    <ng-container *ngIf="compact">
+      <div class="service-grid">
+        <div
+          class="service-card reveal"
+          *ngFor="let s of shown; let i = index"
+          [class.rd1]="i % 3 === 1"
+          [class.rd2]="i % 3 === 2"
+        >
+          <div class="service-icon"><app-icon [name]="s.icon"></app-icon></div>
+          <h3>{{ s.title }}</h3>
+          <p>{{ s.summary }}</p>
+        </div>
+      </div>
+
+      <div class="services-more reveal">
+        <a routerLink="/services" class="btn-yellow">View All Services →</a>
+      </div>
+    </ng-container>
+  </div>
+</section>

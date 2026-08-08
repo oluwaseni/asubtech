@@ -1,0 +1,58 @@
+.booknow-section {
+  background: var(--navy);
+  padding: 4.5rem 0;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -60%;
+    right: -10%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(245, 168, 0, 0.14) 0%, transparent 70%);
+  }
+}
+
+.booknow-inner {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+
+  .section-label { justify-content: center; }
+}
+
+.booknow-text {
+  h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+
+    .accent { color: var(--yellow); }
+  }
+
+  p {
+    color: #b0bdd0;
+    font-size: 14.5px;
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto 2rem;
+  }
+}
+
+.booknow-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 560px) {
+  .booknow-actions { flex-direction: column; align-items: center; }
+}
